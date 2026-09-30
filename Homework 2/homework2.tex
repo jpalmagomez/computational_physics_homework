@@ -1,0 +1,106 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+
+% \usepackage[light,math]{iwona}
+
+%\usepackage[light]{iwona} % keep math in old-school font
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{lmodern}
+
+\usepackage{pdfpages}
+
+\usepackage[dvipsnames]{xcolor}
+
+\usepackage[finnish, british]{babel}
+
+\usepackage{amsmath}
+
+\usepackage[affil-it]{authblk}          % to enable \affil
+
+\usepackage{cancel}
+
+\usepackage{hyperref}               % to enable \texorpdfstring
+
+\usepackage{cleveref}
+
+\usepackage{graphicx}
+
+\usepackage{natbib}             %for citations in Harvard style
+
+\usepackage{enumerate}          %to be able to change the enumerate symbols
+
+\usepackage{amsfonts}           % for special set symbols
+
+\usepackage{listings}
+
+\usepackage{cleveref}
+
+\usepackage{a4wide}
+
+\usepackage{fancyhdr}
+
+\setlength{\headheight}{26pt}
+
+\usepackage{mathrsfs}
+
+\pagestyle{fancy}
+
+\newcommand{\crefrangeconjunction}{--}
+
+\lstset{
+        language=Matlab,
+        breaklines=true
+    }
+
+\lhead{Homework 2\\ October 5, 2026}
+
+\chead{Computational Physics}
+
+\rhead{Jasmine Palma Gomez\\ PHYS-GA 2000}
+
+\renewcommand{\headrulewidth}{0.4pt}
+ 
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\DeclareMathOperator*{\argmax}{argmax}
+
+\DeclareMathOperator*{\var}{Var}
+
+\newcommand{\E}{\mathbb{E}}
+
+\graphicspath{{./plotit/}}
+
+\makeatletter                           % used to make '@' a normal character - needed for the next
+
+\makeatother                            % restores '@' to its normal function
+
+%\renewcommand{\thesection}{\Alph{section}}
+
+%\renewcommand{\thesubsection}{\arabic{subsection}}
+
+%\renewcommand{\thesubsubsection}{\alph{subsubsection}}
+
+\begin{document}
+
+\section*{Summary}
+
+
+\section*{Methods}
+
+Stating the goals (problems) and the methods (algorithms, programs,
+etc) of how you intend to approach them
+
+
+\section*{Results}
+
+
+\section*{Code}
+
+The link to the github repository for this homework assignment can be accessed by clicking \href{https://github.com/jpalmagomez/computational_physics_homework_1.git}{here}.
+
+\clearpage
+
+\end{document}
