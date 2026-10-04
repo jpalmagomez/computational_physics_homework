@@ -1,0 +1,9 @@
+# LaTeX build files since we only want the pdfs
+*.aux
+*.log
+*.synctex.gz
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.tex
