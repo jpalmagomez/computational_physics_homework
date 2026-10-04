@@ -9,6 +9,7 @@
 \usepackage[utf8]{inputenc}
 
 \usepackage{lmodern}
+\usepackage{subcaption}
 
 \usepackage{pdfpages}
 
@@ -85,21 +86,187 @@
 
 \begin{document}
 
-\section*{Summary}
+\section*{Summary} 
 
+In this assignment, we explore numerical methods to solve nonlinear equations and optimization problems. For nonlinear equations, we consider the relaxation, overrelaxation, and binary search methods. To find the extrema of functions, we implement the gradient descent method in multiple dimensions. We apply these methods to various physical problems, including locating phase transitions in a system described by the equation $x = 1 - e^{-cx}$, determining the peak wavelength of blackbody radiation using Wien's displacement law to then estimate the surface temperature of the Sun, and fitting the Schechter stellar mass function to a COSMOS dataset of galaxies. 
+
+We can summarize our findings as follows:
+\begin{enumerate}
+\item Using the overrelaxation method improved the convergence of the solution to $x=1-e^{-2x}$ from 18 iterations with ordinary relaxation to 9 iterations, and to only 7 iterations for the optimal choice $\omega=0.7$. This demonstrates how tuning the relaxation parameter can substantially improve convergence.
+\item Using binary search, we find the root of the Wien displacement equation to be $x\approx4.965114$, giving the displacement constant $b\approx2.898\times10^{-3}\,\mathrm{mK}$. Applying this to the Sun gives a surface temperature of $T\approx5772\,\mathrm{K}$. This illustrates how a simple root finding method can be used to extract various physical constants.
+\item The multidimensional gradient descent method first reproduces the known minimum of $f(x,y)=(x-2)^2+(y-2)^2$ at $(2,2)$, and when applied to the COSMOS stellar mass function converges to $\log_{10}\phi_*\approx-2.56825$, $\log_{10}M_*\approx10.97625$, and $\alpha\approx-1.00942$, with $\chi^2\approx2.90806$. Repeating the fit from several initial points gives the same solution, showing that numerical derivatives and gradient descent can robustly recover the best fit parameters of a multidimensional physical model.
+\end{enumerate}
 
 \section*{Methods}
 
-Stating the goals (problems) and the methods (algorithms, programs,
-etc) of how you intend to approach them
+The goal of this assignment is to solve nonlinear equations and optimization problems using numerical methods. We use relaxation and overrelaxation to solve fixed point equations, binary search to locate roots of nonlinear functions, and multidimensional gradient descent to minimize functions when the derivatives are evaluated numerically. These methods are applied to locating a phase transition, determining Wien's displacement constant, and fitting a Schechter stellar mass function to COSMOS data as physical applications.
 
+\subsection{Relaxation and Overrelaxation}
 
+We first solve the nonlinear equation $x=1-e^{-cx}$ using the relaxation method. Writing the equation in the form $x=f(x)$, successive estimates are generated using $$x^\prime=f(x).$$ Convergence requires the fixed point to be stable, with $|f^\prime(x^*)|<1$ near the solution, where $x^*$ is approximately the solution. In our implementation, we begin from $x_0=0.5$ and iterate until the difference between successive estimates is smaller than the chosen tolerance. We then use the same procedure over a range of $c$ values to determine how the solution changes and locate the phase transition.
+
+We also apply the overrelaxation method to the same equation in order to test whether convergence can be improved. The update is modified to $$x^\prime=(1+\omega)f(x)-\omega x,$$ where $\omega$ is a user-defined parameter. We compare the number of iterations required for ordinary relaxation and overrelaxation and repeat the calculation for several values of $\omega$ to determine which choice gives the fastest convergence.
+
+\subsection{Binary Search}
+
+We use the binary search method to solve the nonlinear equation obtained by setting the derivative of Planck's radiation law equal to zero. After introducing $x=hc/(\lambda k_BT)$, the equation to be solved is $$f(x)=5e^{-x}+x-5=0.$$ We first choose two values $x_1$ and $x_2$ that bracket the desired root, such that $f(x_1)$ and $f(x_2)$ have opposite signs. At each iteration, the midpoint $$x^\prime=\frac{x_1+x_2}{2}$$ is calculated and the half of the interval that still contains the sign change is retained. This is repeated until the width of the interval falls below the specified tolerance. The resulting root is then used to calculate the Wien displacement constant and estimate the surface temperature of the Sun.
+
+\subsection{Gradient Descent in Multiple Dimensions}
+
+The final goal is to find the minimum of a function of several variables and then apply the method to fit the Schechter stellar mass function. We use gradient descent, where the parameters are updated according to $$\mathbf{x}^\prime=\mathbf{x}-\gamma\nabla f,$$ with learning rate $\gamma$. Since the purpose is to use numerical derivatives, each component of the gradient is calculated using a central difference with Richardson extrapolation rather than an analytic derivative.
+
+We first test the method on $f(x,y)=(x-2)^2+(y-2)^2$, which has a known minimum at $(2,2)$. We then minimize the $\chi^2$ of the Schechter model in the three-dimensional parameter space $(\log_{10}\phi_*,\log_{10}M_*,\alpha)$. At each step, the numerical gradient of $\chi^2$ is evaluated with respect to all three parameters and the parameters are updated in the direction of decreasing $\chi^2$ until the distance between successive parameter vectors falls below the tolerance. Finally, we repeat the fit from several different initial positions in parameter space to check that the recovered minimum is robust to the starting values.
 \section*{Results}
 
+\subsection*{Phase Transitions}
 
+We apply the relaxation and overrelaxation method to locate a phase transition in a system described by the equation $x = 1 - e^{-cx}$, where $c$ is a known scaling parameter. This equation is quite versatile, with various applications across physics and mathematics. For instance, as Newman discusses, the equation can be used to characterize contact processes in physics, random graphs, and mathematical epidemiology. The solution to the equation offers an example of a phase transition, where the system's behavior exhibits a salient change from a regime of $x=0$ to a regime of $x\neq 0$ as the parameter $c$ crosses a critical threshold. 
+
+We first consider the relaxation method as a precursor to the overrelaxation method, which we set up doing Newman's 6.10 exercise. Let $c=2$, the initial guess $x_0=0.5$, and the tolerance be $10^{-7}$. This yields an approximate solution of $x\approx 0.796812$ after 18 iterations with an error of $5.045 \times 10^{-8}$. We then calculate the solution for values of c ranging from 0 to 3 in increments of 0.1, and plot the results in \cref{fig:phase_transition}. We can see that the solution is $x=0$ for $c<1$, and then transitions to a non-zero solution for $c>1$. This converged after 4467 iterations with a max error of 0.0002235. This is an example of a percolation phase transition in physics and an epidemic threshold in mathematical epidemiology. We can see that nonlinear equations are well equipped to model phase transitions since they can exhibit multiple stable solutions within a system, and the transition between these solutions can be abrupt and discontinuous with stark regime changes, which is the qualitative behavior that defines a phase transition that linear equations cannot capture.
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{/Users/jasminepalma/computational_physics_homework/Homework 2/figures/phase_transition.png}
+    \caption{The solution to the equation $x = 1 - e^{-cx}$ as a function of the parameter $c$. The solution exhibits a phase transition at $c=1$, where the system transitions from a regime of $x=0$ to a regime of $x\neq 0$. This is an example of a percolation phase transition in physics and an epidemic threshold in mathematical epidemiology.}
+    \label{fig:phase_transition}
+\end{figure}
+
+\subsubsection*{(a)} Let us derive the error on $x^\prime$ for the overrelaxation method. Let $x^* - x^\prime = \epsilon^\prime$ and $\epsilon = x^* -x$, given that $x^*$ is the true solution to the equation. Recall the definition of $x^\prime$ using overrelaxation:
+\[ x^\prime = x + (1 + \omega) f(x) - \omega f(x).\] Taylor expanding $x^\prime$ about $x^*$, we have,
+\[ x^\prime = [(1+\omega) f(x^*) - \omega x^*] + (x-x^*) [(1+\omega)f^\prime (x^*) - \omega],\] and substituting $x^* = [(1+\omega)f(x^*) - \omega x^*]$ into the above expression, we have,
+\[ x^\prime - x^* = (x - x^*) [(1+\omega)f^\prime(x^*) - \omega].\] Substituting $x^* - x^\prime = \epsilon^\prime$ and $x^* - x = \epsilon$,
+\[ \epsilon^\prime = \epsilon [(1+\omega) f^\prime(x^*) - \omega].\] We thus can express $x^*$ in the following way:
+
+\[ x^\star = x+ \epsilon = x + \frac{\epsilon^\prime}{(1+ \omega) f^\prime(x^*) - \omega} = x^\prime + \epsilon^\prime \]
+\[ x - x^\prime = \epsilon^\prime - \frac{\epsilon^\prime}{(1+\omega) f^\prime(x^*) - \omega}\]
+\[ x - x^\prime = \epsilon^\prime (1 - \frac{1}{(1+\omega) f^\prime(x^*) - \omega})\]
+\[ \boxed{ \epsilon^\prime = \frac{x - x^\prime}{1 - \frac{1}{(1+\omega) f^\prime(x^*) - \omega}} \sim \frac{x - x^\prime}{1 - \frac{1}{(1+\omega) f^\prime(x) - \omega}}} \]
+
+\subsubsection*{(b)} We recall that for the standard relaxation method, our solution was $x =  0.796812$ which converged after 18 iterations with an error or  $5.04555\times 10^{-08}$. The convergence, albeit not terribly slow, could be improved upon as we will see in part (c).
+
+\subsubsection*{(c)} Repeating the exercie from 6.10 but using overrelaxation instead, we find that the solution converges to $x = 0.796812$ after 9 iterations with an error of $3.6092 \times 10^{-9}$. This is twice as fast as the ordinary relaxation method, which converged after 18 iterations. Experimenting with different values of $\omega$ from 0.2 to 1.4 in increments of 0.1, we find that the optimal value of $\omega$ is 0.7, which converges to the solution after only 7 iterations achieving the smallest error of $1.682 \times 10^{-11}$. This is a significant improvement over the ordinary relaxation method, and shows how a user-defined parameter can be tuned to improve results.  
+
+\subsubsection*{(d)} There are circumstances under which using a value of $\omega<0$ would be beneficial in coming to a solution faster than with the ordinary relaxation method. Under the oridnary relaxation method, the program is vulnerable to unstable oscillations when the value of $|f^\prime(x^*)|>1$, resulting in no solution no matter the number of iterations. As Newman discusses, one could address this issue by rearranging the equation to give $x$ with a different $f(x)$, which would result in a different value of $|f^\prime(x^*)|$ that would converge if this is less than 1. However, using overrelaxation, we can bypass this issue by using a tuned value of $\omega$ to reduce the value of $|(1+\omega)f^\prime(x^*) - \omega|$ to be less than 1, which would allow the program to converge to a solution. So even if $|f^\prime(x^*)|>1$, we can still find a solution by using a negative value of $\omega$ in certain scenarios. We can split this up into three cases: $f^\prime(x^*)>1$, $f^\prime(x^*)<1$, and $f^\prime(x^*)=1$.
+
+We wish for $|(1 + \omega) f^\prime(x) - \omega|<1$, thus we can write this inequality as $-1-f^\prime(x^*)<\omega(f^\prime(x^*)-1)<1-f^\prime(x^*)$. We can therefore see why we have three cases, as to solve for $\omega$, we must divide by $f^\prime(x^*)-1$, which is negative when $f^\prime(x^*)<1$, positive when $f^\prime(x^*)>1$, and zero when $f^\prime(x^*)=1$. Solving for the three cases, we find the following:
+
+\begin{enumerate}
+\item{$f^\prime(x^*)<1$:} $ - \frac{f^\prime(x^*) + 1}{f^\prime(x^*) - 1}> \omega > -1$.
+\item{$f^\prime(x^*)>1$:} $- \frac{f^\prime(x^*)+1}{f^\prime(x^*)-1} < \omega < -1$.
+\item{$f^\prime(x^*)=1$:} No solution because then $|(1 + \omega) f^\prime(x) - \omega| = 1$.
+\end{enumerate}
+
+Consequently, we can see that these cases admit negative values of $\omega$, which would allow the program to converge to a solution even when $|f^\prime(x^*)|>1$. This is faster than the ordinary relaxation method, which would not converge to a solution in this case. Also, since $(x^\prime - x^*) = (x - x^*) [(1+\omega)f^\prime(x^*) - \omega]$, we can see that the value of $|(1+\omega)f^\prime(x^*) - \omega|$ is a measure of how fast the program converges to a solution, with smaller values of $|(1+\omega)f^\prime(x^*) - \omega|$ resulting in faster convergence since this minimizes the distance on each iteration. So if we choose a good value of $\omega$ that minimizes $|(1+\omega)f^\prime(x^*) - \omega|$ such that its absolute value is less than 1, we can converge to a solution faster than the ordinary relaxation method as $\omega$ is a user-defined parameter whereas we don't have as much control over the value of $f^\prime(x^*)$. Depending on the value of $f^\prime(x^*)$, this may require a negative value of $\omega$ to minimize $|(1+\omega)f^\prime(x^*) - \omega|$.
+
+
+\subsection*{Wien's Displacement Law}
+
+\subsubsection*{(a)}  Planck's radiation law describes the intensity of radiation per unit area and per unit wavelength $\lambda$ from a black body of temperature $T$
+
+\[ I(\lambda) = \frac{2 \pi hc^2 \lambda^{-5}}{e^{\frac{hc}{\lambda k_B T} -1}}, \] where $h$ is Planck's constant, $c$ is the speed of light, and $k_B$ is Boltzmann's constant. With $x = \frac{hc}{k_B T}$, the wavelength at which the emitted radiation is the strongest can be found by solving the following equation,
+
+\[ 5 e^{\frac{-hc}{\lambda k_B T}} + \frac{hc}{\lambda k_B T} - 5 = 0. \] We can show this explicitly by differentiating $I(\lambda)$ with respect to $\lambda$ and setting the derivative equal to zero. 
+
+\[ \frac{d}{d\lambda}(\lambda^{-5}) = -5\lambda^{-6}\]
+\[ \frac{d}{d\lambda}\left(\frac{hc}{\lambda k_BT}\right) = -\frac{hc}{\lambda^2 k_BT} \]
+\[ \frac{d}{d\lambda}\left(e^{\frac{hc}{\lambda k_BT}}-1\right) = -\frac{hc}{\lambda^2 k_BT}e^{\frac{hc}{\lambda k_BT}} \]
+\[ \frac{dI}{d\lambda} = 2\pi hc^2\frac{(-5\lambda^{-6})\left(e^{\frac{hc}{\lambda k_BT}}-1\right)-\lambda^{-5}\left(-\frac{hc}{\lambda^2 k_BT}e^{\frac{hc}{\lambda k_BT}}\right)}{\left(e^{\frac{hc}{\lambda k_BT}}-1\right)^2} \]
+\[ \frac{dI}{d\lambda} = \frac{2\pi hc^2\lambda^{-6}}{\left(e^{\frac{hc}{\lambda k_BT}}-1\right)^2}\left[-5\left(e^{\frac{hc}{\lambda k_BT}}-1\right)+\frac{hc}{\lambda k_BT}e^{\frac{hc}{\lambda k_BT}}\right] \]
+\[ \frac{dI}{d\lambda}=0 \quad\Longrightarrow\quad -5\left(e^{\frac{hc}{\lambda k_BT}}-1\right)+\frac{hc}{\lambda k_BT}e^{\frac{hc}{\lambda k_BT}}=0 \]
+\[ -5e^{\frac{hc}{\lambda k_BT}}+5+\frac{hc}{\lambda k_BT}e^{\frac{hc}{\lambda k_BT}}=0 \]
+\[ -5+5e^{-\frac{hc}{\lambda k_BT}}+\frac{hc}{\lambda k_BT}=0 \]
+\[ 5e^{-\frac{hc}{\lambda k_BT}}+\frac{hc}{\lambda k_BT}-5=0, \] now expressing this in terms of $x = \frac{hc}{k_BT}$, we have:
+
+\[ \boxed{5e^{-x} + x -5=0}\]
+
+If we plot the derivative of $I(\lambda)$ above, let's call it $f(x) = 5e^{-x} + x -5$, we can see that it equals zero when it crosses the x-axis two times. Before using the binary search method to find the roots, we can approximate the roots by finding the midpoints of each pair of $x$ values where $f(x)$ changes signs as a check. We find that the roots are approximately $x_1 \approx -3.5 \times 10^{-3}$ and $x_2 \approx 4.962$. Now substituting back in $x = \frac{hc}{\lambda k_B T}$ and plotting with $\lambda$ on the x-axis, we get $f(\lambda) = 5 e^{-hc/\lambda k_B T)} + \frac{hc}{\lambda k_B T} - 5$ crosses the x-axis for $x = 4.962$, in which it goes from positive to negative which indicates a maximum of $I(\lambda)$. Thus the wavelength at which the emitted radiation is the strongest corresponds to $x = 4.962 = \frac{hc}{\lambda k_B T}$. This is Wien's diplacement law, wherein the wavelength at which the emitted radiation is the strongest is inversely proportional to the temperature of the blackbody ($\lambda = \frac{b}{T}$, where $b = \frac{hc}{k_B x}$). We can also see that $x = 4.962$ minimizes the function $I(x)$ (as $f(x)$ goes from negative to positive as it cross the x-axis), and thus maximizes $I(\lambda)$ as $x$ and $\lambda$ are inversely proportional. Figure~\ref{fig:wien_roots} shows the Wien displacement equation expressed in terms of the dimensionless variable $x$ and wavelength $\lambda$. The nontrivial root at $x\approx4.962$ determines the wavelength of maximum blackbody emission.
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/f_x_plot.png}
+        \caption{$f(x)=5e^{-x}+x-5$.}
+        \label{fig:fx}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/f_lambda_plot.png}
+        \caption{$f(\lambda)=5e^{-hc/(\lambda k_BT)}+\frac{hc}{\lambda k_BT}-5$.}
+        \label{fig:flambda}
+    \end{subfigure}
+    \caption{The Wien displacement equation written in terms of the dimensionless variable $x=hc/(\lambda k_BT)$ (left) and wavelength $\lambda$ (right). The nonzero root, $x\approx4.962$, identifies the maximum of the Planck spectrum. Since $x$ is constant at this maximum, $\lambda_{\max}T=hc/(k_Bx)=\mathrm{constant}$, giving Wien's displacement law, $\lambda_{\max}=b/T$.}
+    \label{fig:wien_roots}
+\end{figure}
+
+\subsubsection*{(b)} For the binary search method, we bracket the possible root of $f(x)$ to be between $x_1 = 4.5$ and $x_2 = 5.0$, as suggested by the bahvior of the graph of $f(x)$ in \cref{fig:fx}. Using a tolerance of $10^{-7}$, the method converges to $x \approx 4.965114$ after 23 iterations. This root gives 
+\[ \lambda_{\max}T=\frac{hc}{k_Bx} = b, \] from which we can get the Wien displacement constant $b\approx 2.898\times10^{-3} \, \mathrm{mK}$. Thus for a blackbody with $T = 10{,}000 \, \mathrm{K}$, the wavelength at which the emitted radiation is the strongest is $\lambda_{\max} \approx 2.898\times10^{-7} \, \mathrm{m}$, which is in the ultraviolet range of the electromagnetic spectrum. Figure~\ref{fig:wien_displacement_law} confirms this result by showing that the wavelength predicted from the binary search solution coincides with the maximum of the Planck radiation spectrum:
+
+
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/plancks_radiation_law.png}
+    \caption{Planck radiation spectrum for a blackbody at $T=10{,}000\,\mathrm{K}$. 
+    The dashed vertical line marks $\lambda_{\max}\approx 2.898\times10^{-7}\,\mathrm{m}$, 
+    obtained from the binary-search solution $x\approx 4.965114$.}
+    \label{fig:wien_displacement_law}
+\end{figure}
+
+
+\subsubsection*{(c)} Optical pyrometry is a technique for inferring the temperatures of objects by observing the color of their thermal radiation they emit, which necessitates the use of Wien's displacement law. The wavelength peak in the Sun's emitted radiation is $\lambda = 502 \, \mathrm{nm} = 5.02\times10^{-7} \, \mathrm{m}$, which is in the visible range of the electromagnetic spectrum. Using Wien's displacement law, we can estimate the surface temperature of the Sun to be $T = b/\lambda_{\max} \approx 5772.45 \, \mathrm{K}$, which is consistent with the known surface temperature of the Sun.
+
+\subsection*{Schechter Stellar Mass Function}
+
+The COSMOS galaxy survey has measurements of the galaxy stellar mass function, consisting of the base-10 log of the galaxy mass, the number density of galaxies per unit volume, and the error on the number density. These types of measurements are typically described using a Schechter function, which can be written as $$n(M_{\mathrm{gal}})=\phi_*\left(\frac{M_{\mathrm{gal}}}{M_*}\right)^{\alpha+1}\exp\left(-\frac{M_{\mathrm{gal}}}{M_*}\right)\ln(10).$$ The free parameters are the amplitude $\phi_*$, the characteristic mass scale $M_*$ where the function transitions from a power-law to an exponential cut off, and the low mass slope $\alpha$.
+
+We fit the Schechter function to the COSMOS data by minimizing its $\chi^2$ value, defined as $$\chi^2=\sum_i\left(\frac{n_{\mathrm{model},i}-n_{\mathrm{data},i}}{\sigma_i}\right)^2,$$ where $n_{\mathrm{model},i}$ is the model value, $n_{\mathrm{data},i}$ is the measured number density, and $\sigma_i$ is the corresponding error.
+
+Before applying gradient descent to the Schechter function, we first test the numerical method on the simple function $$f(x,y)=(x-2)^2+(y-2)^2,$$ which has a known minimum at $(x,y)=(2,2)$. Starting from $(x_0,y_0)=(10,10)$ and calculating the derivatives numerically using Richardson extrapolation, the algorithm converges toward the expected minimum, as shown in \cref{fig:gradient_descent_test}. More precisely, gradient descent converged to to $x = 2.0000003$, $y = 2.0000003$ after 78 iterations with $f(x,y) = 1.417 \times 10^{-13}.$ This confirms that the multidimensional gradient descent implementation is working correctly.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.65\textwidth]{figures/gradient_descent_path.png}
+\caption{Gradient descent applied to $f(x,y)=(x-2)^2+(y-2)^2$. The points show the path from the initial position toward the known minimum at $(2,2)$.}
+\label{fig:gradient_descent_test}
+\end{figure}
+
+We then apply the same method to the Schechter function, minimizing $\chi^2$ in the three-dimensional parameter space $(\log_{10}\phi_*,\log_{10}M_*,\alpha)$. Starting from $\log_{10}\phi_*=-3.0$, $\log_{10}M_*=10.5$, and $\alpha=-1.5$, the method converges after 4319 iterations to $$\log_{10}\phi_*\approx-2.568249,\qquad \log_{10}M_*\approx10.976248,\qquad \alpha\approx-1.009423,$$ with $$\chi^2\approx2.908056.$$
+
+The convergence of $\chi^2$ is shown in \cref{fig:chi2_convergence}. We can see that $\chi^2$ decreases rapidly before flattening near the minimum, indicating that the algorithm has converged.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/chi2_convergence.png}
+\caption{The value of $\chi^2$ as a function of gradient descent iteration. The flattening at late iterations indicates convergence to the minimum.}
+\label{fig:chi2_convergence}
+\end{figure}
+
+The best-fit Schechter function is compared with the COSMOS data in \cref{fig:schechter_fit}. The fit reproduces the overall behavior of the stellar mass function, including the flatter low mass regime and the exponential suppression at high masses.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/schechter.png}
+\caption{The COSMOS stellar mass function and the best fit Schechter function obtained using gradient descent. The model reproduces both the low mass behavior and the high mass exponential cut off.}
+\label{fig:schechter_fit}
+\end{figure}
+
+We can also visualize the path taken through the three-dimensional Schechter parameter space in \cref{fig:schechter_path}. The color represents $\log_{10}\chi^2$, showing that the algorithm moves toward progressively smaller values of $\chi^2$ until reaching the final best-fit parameters.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/schechter_3d_path.png}
+\caption{Gradient descent path through the Schechter parameter space $(\log_{10}\phi_*,\log_{10}M_*,\alpha)$. The color indicates $\log_{10}\chi^2$, with the path moving toward the minimum.}
+\label{fig:schechter_path}
+\end{figure}
+
+Finally, we test the robustness of the fit by repeating the gradient descent from four different initial locations in parameter space. Starting from $(-3.0,10.5,-1.5)$, $(-2.5,11.0,-1.0)$, $(-3.5,10.0,-2.0)$, and $(-4.0,11.5,-1.9)$ for $(\log_{10}\phi_*,\log_{10}M_*,\alpha)$, all cases converge to approximately $$\left(\log_{10}\phi_*,\log_{10}M_*,\alpha\right)\approx(-2.56825,10.97625,-1.00942),$$ with $$\chi^2\approx2.908056.$$ This shows that the result is robust to the choice of initial parameters and that the algorithm is consistently converging to the same minimum.
 \section*{Code}
 
-The link to the github repository for this homework assignment can be accessed by clicking \href{https://github.com/jpalmagomez/computational_physics_homework_1.git}{here}.
+The link to the github repository for this homework assignment can be accessed by clicking \href{https://github.com/jpalmagomez/computational_physics_homework.git}{here}.
 
 \clearpage
 

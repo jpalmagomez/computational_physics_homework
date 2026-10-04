@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  28 SEP 2026 11:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  4 OCT 2026 15:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -63,30 +63,54 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+\caption@tempdima=\dimen142
+\captionmargin=\dimen143
+\caption@leftmargin=\dimen144
+\caption@rightmargin=\dimen145
+\caption@width=\dimen146
+\caption@indent=\dimen147
+\caption@parindent=\dimen148
+\caption@hangindent=\dimen149
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count270
+\c@continuedfloat=\count271
+)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count272
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count273
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/pdfpages/pdfpages.sty
 Package: pdfpages 2025/01/30 v0.6e Insert pages of external PDF documents (AM)
  (/usr/local/texlive/2025/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count270
-\calc@Bcount=\count271
-\calc@Adimen=\dimen142
-\calc@Bdimen=\dimen143
+\calc@Acount=\count274
+\calc@Bcount=\count275
+\calc@Adimen=\dimen150
+\calc@Bdimen=\dimen151
 \calc@Askip=\skip51
 \calc@Bskip=\skip52
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count272
+\calc@Ccount=\count276
 \calc@Cskip=\skip53
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
-\ESO@tempdima=\dimen144
-\ESO@tempdimb=\dimen145
- (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks19
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty
+\ESO@tempdima=\dimen152
+\ESO@tempdimb=\dimen153
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
  (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
@@ -106,7 +130,7 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 )) (/usr/local/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count273
+\etb@tempcnta=\count277
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
  (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
@@ -118,33 +142,33 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
 )
-\Gin@req@height=\dimen146
-\Gin@req@width=\dimen147
+\Gin@req@height=\dimen154
+\Gin@req@width=\dimen155
 )
-\AM@pagewidth=\dimen148
-\AM@pageheight=\dimen149
-\AM@fboxrule=\dimen150
+\AM@pagewidth=\dimen156
+\AM@pageheight=\dimen157
+\AM@fboxrule=\dimen158
  (/usr/local/texlive/2025/texmf-dist/tex/latex/pdfpages/pppdftex.def
 File: pppdftex.def 2025/01/30 v0.6e Pdfpages driver for pdfTeX (AM)
 )
-\pdfpages@includegraphics@status=\count274
+\pdfpages@includegraphics@status=\count278
 \AM@pagebox=\box52
 \AM@global@opts=\toks20
-\AM@pagecnt=\count275
+\AM@pagecnt=\count279
 \AM@toc@title=\toks21
 \AM@lof@heading=\toks22
-\c@AM@survey=\count276
+\c@AM@survey=\count280
 \AM@templatesizebox=\box53
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2025/02/14 v25.4 The multilingual framework for pdfLaTeX, LuaLaTeX and XeLaTeX
-\babel@savecnt=\count277
-\U@D=\dimen151
+\babel@savecnt=\count281
+\U@D=\dimen159
 \l@unhyphenated=\language90
  (/usr/local/texlive/2025/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count278
+\bbl@dirlevel=\count282
  (/usr/local/texlive/2025/texmf-dist/tex/generic/babel-finnish/finnish.ldf
 Language: finnish 2021/02/06 v1.3s Finnish support from the babel system
 Package babel Info: Making " an active character on input line 85.
@@ -174,21 +198,21 @@ Package: amstext 2021/08/26 v2.01 AMS text
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks23
-\ex@=\dimen152
+\ex@=\dimen160
 )) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen153
+\pmbraise@=\dimen161
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count279
+\inf@bad=\count283
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count280
-\leftroot@=\count281
+\uproot@=\count284
+\leftroot@=\count285
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count282
-\DOTSCASE@=\count283
+\classnum@=\count286
+\DOTSCASE@=\count287
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -198,30 +222,30 @@ LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen154
+\big@size=\dimen162
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count284
+\macc@depth=\count288
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count285
+\c@MaxMatrixCols=\count289
 \dotsspace@=\muskip17
-\c@parentequation=\count286
-\dspbrk@lvl=\count287
+\c@parentequation=\count290
+\dspbrk@lvl=\count291
 \tag@help=\toks24
-\row@=\count288
-\column@=\count289
-\maxfields@=\count290
+\row@=\count292
+\column@=\count293
+\maxfields@=\count294
 \andhelp@=\toks25
-\eqnshift@=\dimen155
-\alignsep@=\dimen156
-\tagshift@=\dimen157
-\tagwidth@=\dimen158
-\totwidth@=\dimen159
-\lineht@=\dimen160
+\eqnshift@=\dimen163
+\alignsep@=\dimen164
+\tagshift@=\dimen165
+\tagwidth@=\dimen166
+\totwidth@=\dimen167
+\lineht@=\dimen168
 \@envbody=\toks26
 \multlinegap=\skip55
 \multlinetaggap=\skip56
@@ -232,9 +256,9 @@ LaTeX Info: Redefining \] on input line 2954.
 Package: authblk 2001/02/27 1.3 (PWD)
 \affilsep=\skip57
 \@affilsep=\skip58
-\c@Maxaffil=\count291
-\c@authors=\count292
-\c@affil=\count293
+\c@Maxaffil=\count295
+\c@authors=\count296
+\c@affil=\count297
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/cancel/cancel.sty
 Package: cancel 2013/04/12 v2.2 Cancel math terms
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
@@ -268,13 +292,13 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
  (/usr/local/texlive/2025/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count294
+\c@section@level=\count298
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
-\@linkdim=\dimen161
-\Hy@linkcounter=\count295
-\Hy@pagecounter=\count296
+\@linkdim=\dimen169
+\Hy@linkcounter=\count299
+\Hy@pagecounter=\count300
  (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2024-11-05 v7.01l Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -282,7 +306,7 @@ Now handling font encoding PD1 ...
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count297
+\Hy@SavedSpaceFactor=\count301
  (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2024-11-05 v7.01l Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -295,21 +319,21 @@ Package hyperref Info: Plain pages OFF on input line 4172.
 Package hyperref Info: Backreferencing OFF on input line 4177.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4424.
-\c@Hy@tempcnt=\count298
+\c@Hy@tempcnt=\count302
  (/usr/local/texlive/2025/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4763.
-\XeTeXLinkMargin=\dimen162
+\XeTeXLinkMargin=\dimen170
  (/usr/local/texlive/2025/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (/usr/local/texlive/2025/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count299
-\Field@Width=\dimen163
-\Fld@charsize=\dimen164
+\Fld@menulength=\count303
+\Field@Width=\dimen171
+\Fld@charsize=\dimen172
 Package hyperref Info: Hyper figures OFF on input line 6042.
 Package hyperref Info: Link nesting OFF on input line 6047.
 Package hyperref Info: Hyper index ON on input line 6050.
@@ -321,9 +345,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6072.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count300
-\c@Item=\count301
-\c@Hfootnote=\count302
+\Hy@abspage=\count304
+\c@Item=\count305
+\c@Hfootnote=\count306
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hpdftex.def
@@ -332,8 +356,8 @@ File: hpdftex.def 2024-11-05 v7.01l Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\Fld@listcount=\count303
-\c@bookmark@seq@number=\count304
+\Fld@listcount=\count307
+\c@bookmark@seq@number=\count308
  (/usr/local/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
  (/usr/local/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -360,7 +384,7 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip60
 \bibsep=\skip61
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count305
+\c@NAT@ctr=\count309
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
 \@enLab=\toks28
@@ -372,24 +396,24 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count306
+\lst@mode=\count310
 \lst@gtempboxa=\box56
 \lst@token=\toks29
-\lst@length=\count307
-\lst@currlwidth=\dimen165
-\lst@column=\count308
-\lst@pos=\count309
-\lst@lostspace=\dimen166
-\lst@width=\dimen167
-\lst@newlines=\count310
-\lst@lineno=\count311
-\lst@maxwidth=\dimen168
+\lst@length=\count311
+\lst@currlwidth=\dimen173
+\lst@column=\count312
+\lst@pos=\count313
+\lst@lostspace=\dimen174
+\lst@width=\dimen175
+\lst@newlines=\count314
+\lst@lineno=\count315
+\lst@maxwidth=\dimen176
  (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-\c@lstnumber=\count312
-\lst@skipnumbers=\count313
+\c@lstnumber=\count316
+\lst@skipnumbers=\count317
 \lst@framebox=\box57
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2024/09/23 1.10c listings configuration
@@ -422,46 +446,50 @@ Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 86.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 87.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count314
+\l__color_backend_stack_int=\count318
 \l__pdf_internal_box=\box58
 ) (./homework2.aux)
 \openout1 = `homework2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
  (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count315
-\scratchdimen=\dimen169
+\scratchcounter=\count319
+\scratchdimen=\dimen177
 \scratchbox=\box59
-\nofMPsegments=\count316
-\nofMParguments=\count317
+\nofMPsegments=\count320
+\nofMParguments=\count321
 \everyMPshowfont=\toks31
-\MPscratchCnt=\count318
-\MPscratchDim=\dimen170
-\MPnumerator=\count319
-\makeMPintoPDFobject=\count320
+\MPscratchCnt=\count322
+\MPscratchDim=\dimen178
+\MPnumerator=\count323
+\makeMPintoPDFobject=\count324
 \everyMPtoPDFconversion=\toks32
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -477,37 +505,173 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-Package hyperref Info: Link coloring OFF on input line 86.
+Package hyperref Info: Link coloring OFF on input line 87.
  (./homework2.out) (./homework2.out)
 \@outlinefile=\write3
 \openout3 = `homework2.out'.
 
-\c@lstlisting=\count321
-
+\c@lstlisting=\count325
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 91.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 91.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 91.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 91.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 91.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 91.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 91.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 91.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 91.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 91.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
 
 [1{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}
 
-] (./homework2.aux)
+{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+
+[2]
+</Users/jasminepalma/computational_physics_homework/Homework 2/figures/phase_transition.png, id=40, 578.16pt x 433.62pt>
+File: /Users/jasminepalma/computational_physics_homework/Homework 2/figures/phase_transition.png Graphic file (type png)
+<use /Users/jasminepalma/computational_physics_homework/Homework 2/figures/phase_transition.png>
+Package pdftex.def Info: /Users/jasminepalma/computational_physics_homework/Homework 2/figures/phase_transition.png  used on input line 130.
+(pdftex.def)             Requested size: 309.85626pt x 232.39133pt.
+
+
+[3 </Users/jasminepalma/computational_physics_homework/Homework 2/figures/phase_transition.png>]
+
+[4]
+Overfull \hbox (2.61551pt too wide) in paragraph at lines 165--166
+\T1/lmr/m/n/10.95 Planck's ra-di-ation law de-scribes the in-tens-ity of ra-di-ation per unit area and per unit wavelength
+ []
+
+
+
+[5]
+<figures/f_x_plot.png, id=71, 578.16pt x 433.62pt>
+File: figures/f_x_plot.png Graphic file (type png)
+<use figures/f_x_plot.png>
+Package pdftex.def Info: figures/f_x_plot.png  used on input line 189.
+(pdftex.def)             Requested size: 216.90276pt x 162.67326pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 190.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 190.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 190.
+<figures/f_lambda_plot.png, id=72, 578.16pt x 433.62pt>
+File: figures/f_lambda_plot.png Graphic file (type png)
+<use figures/f_lambda_plot.png>
+Package pdftex.def Info: figures/f_lambda_plot.png  used on input line 196.
+(pdftex.def)             Requested size: 216.90276pt x 162.67326pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+
+[6{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+<figures/plancks_radiation_law.png, id=82, 867.24pt x 578.16pt>
+File: figures/plancks_radiation_law.png Graphic file (type png)
+<use figures/plancks_radiation_law.png>
+Package pdftex.def Info: figures/plancks_radiation_law.png  used on input line 212.
+(pdftex.def)             Requested size: 309.85626pt x 206.56712pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+
+[7 <./figures/f_x_plot.png> <./figures/f_lambda_plot.png>]
+<figures/gradient_descent_path.png, id=99, 505.89pt x 433.62pt>
+File: figures/gradient_descent_path.png Graphic file (type png)
+<use figures/gradient_descent_path.png>
+Package pdftex.def Info: figures/gradient_descent_path.png  used on input line 232.
+(pdftex.def)             Requested size: 287.72223pt x 246.62341pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (1.98872pt too wide) in paragraph at lines 237--237
+\T1/lmr/m/n/10.95 dimensional para-meter space $\OT1/lmr/m/n/10.95 ([][] \OML/lmm/m/it/10.95 ^^^[]; [][] M[]; \OT1/lmr/m/n/10.95 )$\T1/lmr/m/n/10.95 . Start-ing from $[][] \OML/lmm/m/it/10.95 ^^^[] \OT1/lmr/m/n/10.95 = \OMS/lmsy/m/n/10.95 ^^@\OT1/lmr/m/n/10.95 3\OML/lmm/m/it/10.95 :\OT1/lmr/m/n/10.95 0$\T1/lmr/m/n/10.95 , $[][] \OML/lmm/m/it/10.95 M[] \OT1/lmr/m/n/10.95 =
+ []
+
+
+
+[8 <./figures/plancks_radiation_law.png>]
+<figures/chi2_convergence.png, id=107, 578.16pt x 433.62pt>
+File: figures/chi2_convergence.png Graphic file (type png)
+<use figures/chi2_convergence.png>
+Package pdftex.def Info: figures/chi2_convergence.png  used on input line 243.
+(pdftex.def)             Requested size: 309.85626pt x 232.39133pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/schechter.png, id=109, 557.6835pt x 400.8576pt>
+File: figures/schechter.png Graphic file (type png)
+<use figures/schechter.png>
+Package pdftex.def Info: figures/schechter.png  used on input line 252.
+(pdftex.def)             Requested size: 309.85626pt x 222.72937pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/schechter_3d_path.png, id=111, 703.428pt x 451.9284pt>
+File: figures/schechter_3d_path.png Graphic file (type png)
+<use figures/schechter_3d_path.png>
+Package pdftex.def Info: figures/schechter_3d_path.png  used on input line 261.
+(pdftex.def)             Requested size: 420.5197pt x 270.17302pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+
+[9 <./figures/gradient_descent_path.png>]
+
+[10 <./figures/chi2_convergence.png> <./figures/schechter.png>]
+
+[11 <./figures/schechter_3d_path.png>] (./homework2.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `homework2.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: 2FEBED8FA53C8938286A4B3E2D35AA90;570.
  ) 
 Here is how much of TeX's memory you used:
- 15919 strings out of 473190
- 262491 string characters out of 5715801
- 848845 words of memory out of 5000000
- 38954 multiletter control sequences out of 15000+600000
- 568893 words of font info for 41 fonts, out of 8000000 for 9000
+ 17632 strings out of 473190
+ 296704 string characters out of 5715801
+ 888760 words of memory out of 5000000
+ 40568 multiletter control sequences out of 15000+600000
+ 623800 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,332b,460s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb>
-Output written on homework2.pdf (1 page, 56151 bytes).
+ 75i,12n,79p,1623b,631s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
+Output written on homework2.pdf (11 pages, 958417 bytes).
 PDF statistics:
- 29 PDF objects out of 1000 (max. 8388607)
- 21 compressed objects within 1 object stream
- 6 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 222 PDF objects out of 1000 (max. 8388607)
+ 157 compressed objects within 2 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 65 words of extra memory for PDF output out of 10000 (max. 10000000)
 
