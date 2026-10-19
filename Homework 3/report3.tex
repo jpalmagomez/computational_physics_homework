@@ -215,7 +215,7 @@ The blurred image and point spread function were transformed into Fourier space.
     \label{fig:deconvolved-image}
 \end{figure}
 
-The deconvolved image as seen in \cref{fig:deconvolved-image} is sharper than the original blurred image, and the main features become more distinguishable, such as the people in front of the house that were previously indistinct. However, the image is not perfectly restored because Fourier components that are strongly suppressed by the point spread function cannot be recovered in a reliable way, which means there is inevitably some loss in detail as each Fourier coefficient corresponds to a specific spatial frequency of detail. The threshold applied during the division prevents numerical instability but also means that some information remains blurred.
+The deconvolved image as seen in \cref{fig:deconvolved-image} is sharper than the original blurred image, and the main features become more distinguishable, such as the people in front of the house that were previously indistinct. However, the image is not perfectly restored because Fourier components that are strongly suppressed by the point spread function cannot be recovered in a reliable way, which means there is inevitably some loss in detail as each Fourier coefficient corresponds to a specific spatial frequency of detail. The threshold applied during the division prevents numerical instability but also means that some information remains blurred. Also, aliasing occurs when the image is sampled at a finite resolution which is at a lower rate than its highest frequency components, which prevents reconstruction from capturing all the original detail which instead appear as low frequency artifacts and distortions in the reconstructed image.
 
 \section*{Code}
 
